@@ -70,10 +70,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: List.generate(topicsList.length, (index) {
                       return Row(
                         children: [
+                          index == 0
+                              ? Row(
+                                  children: [
+                                    ourButton(title: "All"),
+                                    const SizedBox(width: 8),
+                                  ],
+                                )
+                              : const SizedBox(width: 0),
                           ourButton(title: topicsList[index]),
-                          const SizedBox(
-                            width: 8,
-                          )
+                          const SizedBox(width: 8)
                         ],
                       );
                     }),
